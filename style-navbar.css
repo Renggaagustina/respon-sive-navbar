@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital@1&family=Oswald:wght@500&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital@1&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "monserrat", sans-serif;
+    overflow-x: hidden;
+    padding-bottom: 1000px;
+}
+
+/* navbar */
+
+.navbar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    background-color: rgb(219, 6, 6);
+    justify-content: space-around;
+    padding: 20px 0;
+    color: white;
+    font-family: "Paytone One", "sans-serif";
+}
+
+.navbar ul li a:hover{
+    font-size: 20px;
+}
+
+.navbar h3 {
+    font-family: "paytone One", "sans-serif";
+}
+
+.nav-container ul {
+    display: flex;
+    width: 35%;
+    list-style: none;
+}
+
+.nav-container ul li{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+/* hamburger menu */
+
+.burger{
+    display: none;
+    flex-direction: column;
+    height: 17px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.burger input{
+    position: absolute;
+    width: 90px;
+    height: 28px;
+    margin: -5px -31px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.burger span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.4s;
+}
+
+/* hamburger menu animation */
+.burger span:nth-child(2){
+    transform-origin: 0 0;
+}
+.burger input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px,-1px);
+}
+
+.burger span:last-child{
+    transform-origin: 0 100%;
+}
+.burger input:checked ~ span:last-child{
+    transform: rotate(-45deg) translate(-1px,0)
+}
+.burger input:checked ~ span:nth-child(3){
+    transform: scale(0)
+}
+
+
+
+/* responsive media query nav bar */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        width: 40%;
+    }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    .navbar ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45%;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(219, 6, 6);
+        z-index: -1;
+        transform: translatex(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    .navbar .slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .navbar ul li a:hover{
+        font-size: 20px;
+    }
+
+    .burger{
+        display: flex;
+    }
+}
+/* akhir navbar */
